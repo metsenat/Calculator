@@ -44,7 +44,7 @@ namespace Calculator
                 operationPerformed = button.Text;
                 resultValue = Convert.ToDouble(textBox1.Text);
                 isOperationPerformed = true;
-            }          
+            }
         }
         // 3. Обработка кнопки "Равно" (=)
         private void BtnEquals_Click(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace Calculator
             {
                 if (secondOperand == 0)
                 {
-                    textBox1.Text = "Error"; // Защита от деления на ноль
+                    // textBox1.Text = "Error"; // Защита от деления на ноль
                     MessageBox.Show("Деление на ноль невозможно!");
                     return;
                 }
