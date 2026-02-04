@@ -179,13 +179,14 @@
             // 
             // button13
             // 
-            button13.Font = new Font("Segoe UI", 12F);
+            button13.BackColor = SystemColors.InactiveCaption;
+            button13.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             button13.Location = new Point(336, 216);
             button13.Name = "button13";
             button13.Size = new Size(39, 39);
             button13.TabIndex = 12;
             button13.Text = "C";
-            button13.UseVisualStyleBackColor = true;
+            button13.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
