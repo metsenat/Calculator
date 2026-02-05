@@ -15,6 +15,10 @@
         // 1. Обработка нажатия цифр (0-9) и десятичной точки
         private void Number_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "Error")
+            {
+                button13.PerformClick();
+            }
             if ((textBox1.Text == "0") || (isOperationPerformed))
                 textBox1.Clear();
 
@@ -31,6 +35,10 @@
         // 2. Обработка арифметических операций (+, -, *, /, x^y)
         private void Operator_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "Error")
+            {
+                button13.PerformClick();
+            }
             Button button = (Button)sender;
 
             if (resultValue != 0)
@@ -52,6 +60,11 @@
 
             double secondOperand = Convert.ToDouble(textBox1.Text);
 
+            if (textBox1.Text == "Error")
+            {
+                button13.PerformClick();
+            }
+
             if (operationPerformed == "+")
             {
                 textBox1.Text = (resultValue + secondOperand).ToString();
@@ -68,7 +81,7 @@
             {
                 if (secondOperand == 0)
                 {
-                    // textBox1.Text = "Error"; // Защита от деления на ноль
+                    textBox1.Text = "Error"; // Защита от деления на ноль
                     MessageBox.Show("Деление на ноль невозможно!");
                     return;
                 }
@@ -92,6 +105,11 @@
             Button button = (Button)sender;
             double inputValue = Double.Parse(textBox1.Text);
             double result = 0;
+
+            if (textBox1.Text == "Error")
+            {
+                button13.PerformClick();
+            }
 
             // Проверка режима: Градусы или Радианы
             bool isDegrees = rbDegrees.Checked;
@@ -142,7 +160,9 @@
                     {
                         tan = Math.Tan(inputValue);
                     }
-                    if (tan == 0) {
+                    if (tan == 0)
+                    {
+                        textBox1.Text = "Error";
                         MessageBox.Show("Котангенс не определен.");
                         return;
                     }
@@ -153,6 +173,7 @@
                     tan = Math.Tan(DegreesToRadians(inputValue));
                     if (tan == 0)
                     {
+                        textBox1.Text = "Error";
                         MessageBox.Show("Котангенс не определен.");
                         return;
                     }
@@ -160,21 +181,21 @@
                 }
             }
             if (button.Text == "√")
-            { 
+            {
                 if (inputValue < 0)
                 {
-                    //textBox1.Text = "Error";
+                    textBox1.Text = "Error";
                     MessageBox.Show("Нельзя извлечь корень из отрицательного числа!");
                     return;
                 }
-                result = Math.Sqrt(inputValue); 
+                result = Math.Sqrt(inputValue);
             }
             if (button.Text == "%")
-            { 
-                result = inputValue / 100.0; 
+            {
+                result = inputValue / 100.0;
             }
             if (button.Text == "±")
-            { 
+            {
                 result = -inputValue;
                 textBox1.Text = result.ToString();
                 return;
@@ -189,6 +210,37 @@
         private double DegreesToRadians(double degrees)
         {
             return (degrees * Math.PI) / 180.0;
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "0";
+            resultValue = 0;
+            operationPerformed = "";
+        }
+
+        // 5. Константы (Pi, E)
+        private void Constants_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button.Text == "π")
+                textBox1.Text = Math.PI.ToString();
+            else if (button.Text == "e")
+                textBox1.Text = Math.E.ToString();
+
+            isOperationPerformed = true;
+        }
+
+        private void BtnBackspace_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+            }
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "0";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

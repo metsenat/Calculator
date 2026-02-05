@@ -55,6 +55,9 @@
             button23 = new Button();
             button24 = new Button();
             button25 = new Button();
+            button26 = new Button();
+            button27 = new Button();
+            button28 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -170,7 +173,7 @@
             // button11
             // 
             button11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button11.Location = new Point(246, 216);
+            button11.Location = new Point(295, 217);
             button11.Name = "button11";
             button11.Size = new Size(39, 39);
             button11.TabIndex = 10;
@@ -181,7 +184,7 @@
             // button12
             // 
             button12.Font = new Font("Segoe UI", 12F);
-            button12.Location = new Point(337, 261);
+            button12.Location = new Point(386, 262);
             button12.Name = "button12";
             button12.Size = new Size(39, 39);
             button12.TabIndex = 11;
@@ -199,6 +202,7 @@
             button13.TabIndex = 12;
             button13.Text = "C";
             button13.UseVisualStyleBackColor = false;
+            button13.Click += BtnClear_Click;
             // 
             // textBox1
             // 
@@ -223,7 +227,7 @@
             // button15
             // 
             button15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button15.Location = new Point(290, 216);
+            button15.Location = new Point(339, 217);
             button15.Margin = new Padding(3, 2, 3, 2);
             button15.Name = "button15";
             button15.Size = new Size(40, 39);
@@ -235,7 +239,7 @@
             // button16
             // 
             button16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button16.Location = new Point(337, 217);
+            button16.Location = new Point(386, 218);
             button16.Margin = new Padding(3, 2, 3, 2);
             button16.Name = "button16";
             button16.Size = new Size(40, 39);
@@ -247,7 +251,7 @@
             // button17
             // 
             button17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button17.Location = new Point(246, 263);
+            button17.Location = new Point(295, 264);
             button17.Margin = new Padding(3, 2, 3, 2);
             button17.Name = "button17";
             button17.Size = new Size(40, 37);
@@ -259,7 +263,7 @@
             // button18
             // 
             button18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button18.Location = new Point(290, 263);
+            button18.Location = new Point(339, 264);
             button18.Margin = new Padding(3, 2, 3, 2);
             button18.Name = "button18";
             button18.Size = new Size(40, 37);
@@ -284,7 +288,7 @@
             // button19
             // 
             button19.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button19.Location = new Point(428, 216);
+            button19.Location = new Point(527, 261);
             button19.Margin = new Padding(3, 2, 3, 2);
             button19.Name = "button19";
             button19.Size = new Size(40, 39);
@@ -296,7 +300,7 @@
             // button20
             // 
             button20.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button20.Location = new Point(474, 217);
+            button20.Location = new Point(573, 262);
             button20.Margin = new Padding(3, 2, 3, 2);
             button20.Name = "button20";
             button20.Size = new Size(40, 39);
@@ -308,7 +312,7 @@
             // button21
             // 
             button21.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button21.Location = new Point(520, 216);
+            button21.Location = new Point(619, 261);
             button21.Margin = new Padding(3, 2, 3, 2);
             button21.Name = "button21";
             button21.Size = new Size(40, 39);
@@ -320,7 +324,7 @@
             // button22
             // 
             button22.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button22.Location = new Point(566, 216);
+            button22.Location = new Point(665, 261);
             button22.Margin = new Padding(3, 2, 3, 2);
             button22.Name = "button22";
             button22.Size = new Size(40, 39);
@@ -332,7 +336,7 @@
             // button23
             // 
             button23.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button23.Location = new Point(428, 261);
+            button23.Location = new Point(527, 306);
             button23.Margin = new Padding(3, 2, 3, 2);
             button23.Name = "button23";
             button23.Size = new Size(40, 39);
@@ -344,7 +348,7 @@
             // button24
             // 
             button24.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button24.Location = new Point(474, 260);
+            button24.Location = new Point(573, 304);
             button24.Margin = new Padding(3, 2, 3, 2);
             button24.Name = "button24";
             button24.Size = new Size(40, 39);
@@ -356,7 +360,7 @@
             // button25
             // 
             button25.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            button25.Location = new Point(520, 259);
+            button25.Location = new Point(619, 304);
             button25.Margin = new Padding(3, 2, 3, 2);
             button25.Name = "button25";
             button25.Size = new Size(40, 39);
@@ -365,11 +369,50 @@
             button25.UseVisualStyleBackColor = true;
             button25.Click += AdvancedMath_Click;
             // 
+            // button26
+            // 
+            button26.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button26.Location = new Point(619, 214);
+            button26.Margin = new Padding(3, 2, 3, 2);
+            button26.Name = "button26";
+            button26.Size = new Size(86, 39);
+            button26.TabIndex = 27;
+            button26.Text = "<-";
+            button26.UseVisualStyleBackColor = true;
+            button26.Click += BtnBackspace_Click;
+            // 
+            // button27
+            // 
+            button27.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button27.Location = new Point(573, 214);
+            button27.Margin = new Padding(3, 2, 3, 2);
+            button27.Name = "button27";
+            button27.Size = new Size(40, 39);
+            button27.TabIndex = 28;
+            button27.Text = "π";
+            button27.UseVisualStyleBackColor = true;
+            button27.Click += Constants_Click;
+            // 
+            // button28
+            // 
+            button28.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            button28.Location = new Point(527, 214);
+            button28.Margin = new Padding(3, 2, 3, 2);
+            button28.Name = "button28";
+            button28.Size = new Size(40, 39);
+            button28.TabIndex = 29;
+            button28.Text = "e";
+            button28.UseVisualStyleBackColor = true;
+            button28.Click += Constants_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button28);
+            Controls.Add(button27);
+            Controls.Add(button26);
             Controls.Add(button25);
             Controls.Add(button24);
             Controls.Add(button23);
@@ -432,5 +475,8 @@
         private Button button23;
         private Button button24;
         private Button button25;
+        private Button button26;
+        private Button button27;
+        private Button button28;
     }
 }
