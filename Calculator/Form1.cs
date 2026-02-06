@@ -242,7 +242,7 @@
                 textBox1.Text = "0";
             }
         }
-
+        // -------------------------------------------------------------
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -259,8 +259,8 @@
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
+        {   
+            
         }
     }
 }

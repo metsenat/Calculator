@@ -280,7 +280,6 @@
             rbDegrees.Name = "rbDegrees";
             rbDegrees.Size = new Size(94, 25);
             rbDegrees.TabIndex = 19;
-            rbDegrees.TabStop = true;
             rbDegrees.Text = "Градусы";
             rbDegrees.UseVisualStyleBackColor = true;
             rbDegrees.CheckedChanged += radioButton1_CheckedChanged;
